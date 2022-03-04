@@ -2,9 +2,11 @@
 
 ```shell
     composer install
-```
-
-```shell
+    
+    cp .env.example .env
+    
+    php artisan key:generate
+    
     php artisan migrate
 ```
 
@@ -29,13 +31,13 @@ Paginate all prices
 Get all products prices
 
 ```
-    GET /api/products/{uuid}/prices
+    GET /api/products/{product_uuid}/prices
 ```
 
 Sync product prices
 
 ```
-    PUT /api/prices/{uuid}
+    PUT /api/prices/{product_uuid}
     {
     "prices": [
         {
