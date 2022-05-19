@@ -9,6 +9,6 @@ class EloquentPriceRepository implements PriceRepositoryInterface
 {
     public function paginate(int $perPage = 15, int $page = 1): LengthAwarePaginator
     {
-        return Price::paginate($perPage, ['*'], 'page', $page);
+        return Price::orderBy('price')->paginate($perPage, ['*'], 'page', $page);
     }
 }
